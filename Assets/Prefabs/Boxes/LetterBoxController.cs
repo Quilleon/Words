@@ -51,9 +51,6 @@ public class LetterBoxController : MonoBehaviour
 
     
 
-
-
-
     #region Button Functions
 
     private bool _hasBeenSelected = false;
@@ -129,6 +126,14 @@ public class LetterBoxController : MonoBehaviour
     }
 
     #endregion
+
+
+
+    public void ChangeText(string newText)
+    {
+        _tmpInput.text = newText;
+    }
+    
     
     
     void Start()

@@ -283,6 +283,9 @@ public class TileSorting : MonoBehaviour // TileMaster???
     
     private void OnValidate()
     {
+        if (!validate)
+            return;
+        
         validate = false;
         
         Sorting();
@@ -350,7 +353,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         gridY = highY - lowY + 1;
         
         _crossWord = new TMP_InputField[gridX,gridY]; //TMP_InputField[,] letterGrid = new TMP_InputField[gridX,gridY]; // 2D array
-        print("Grid = " + gridX + ", " + gridY); //Console.WriteLine("Grid is {1}, {2}", gridX, gridY);
+        //print("Grid = " + gridX + ", " + gridY); //Console.WriteLine("Grid is {1}, {2}", gridX, gridY);
 
         // Sort all squares into a 2D array (matrix)
         foreach (var child in childList)
@@ -400,7 +403,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
                 if (!box)
                     continue;
                 
-                print(x + ", " + y); // Registered boxes
+                //print(x + ", " + y); // Registered boxes
                 
                 if (randomInt == 0) // If first box
                 { }
