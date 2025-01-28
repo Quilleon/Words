@@ -57,10 +57,12 @@ public class LetterBoxController : MonoBehaviour
     
     public void Selected()
     {
+        
         _hasBeenSelected = true;
         
         //print("Selected");
-        _tileSorting.selected = _tmpInput;
+        //print(correctChar + " was selected");
+        _tileSorting.selected = _tmpInput; // TODO: Isn't initialized
         
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
@@ -80,7 +82,7 @@ public class LetterBoxController : MonoBehaviour
         if (_tileSorting.selected == _tmpInput )
         {
             //_tileSorting.selected = null;
-            //print("Re-selected");
+            print("Re-selected");
             _tmpInput.Select();
         }
         

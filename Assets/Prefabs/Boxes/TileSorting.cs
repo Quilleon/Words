@@ -13,9 +13,22 @@ public class TileSorting : MonoBehaviour // TileMaster???
     private string activeWordHint;
     private TMP_Text _wordHintDisplay;
     
+    private void OnEnable() // Happens too damn fast
+    {
+        print("Enabled: " + name);
+        
+        if (selected)
+            selected.Select();
+        
+        // Select a box to start with
+        //selected = transform.GetChild(0).GetComponentInChildren<TMP_InputField>();
+        //selected.Select();
+        //print(selected.GetComponent<LetterBoxController>().correctChar + " was selected");
+    }
     
     void Start()
     {
+        //print("Start");
         _wordHintDisplay = GameObject.Find("Word Hint").GetComponent<TMP_Text>();
         
         
@@ -29,9 +42,11 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Select a box to start with
         selected = transform.GetChild(0).GetComponentInChildren<TMP_InputField>();
         selected.Select();
+        print(selected.text + " was selected");
+        //print(selected.GetComponentInParent<LetterBoxController>().correctChar + " was selected");
     }
-
     
+
     public TMP_InputField selected; //{private get; set;}
     private int selectedXValue, selectedYValue; // Value starting from 0
     
@@ -80,6 +95,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
     [SerializeField] private Color normal, extra;
 
     private int _numWordInRowColumn;
+
+    private bool activated;
     
     // Update is called once per frame
     void Update()
@@ -450,7 +467,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
             randomInt++;
         }*/
         
-        print("Words in crossword: " + _wordCount);
+        //print("Words in crossword: " + _wordCount);
 
         //print(_horizontalWords[3]);
         //foreach (var num in _horizontalWords) print(num);

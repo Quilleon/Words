@@ -14,6 +14,7 @@ public class LetterButton : MonoBehaviour
     {
         letter = GetComponentInChildren<TMP_Text>().text;
 
+        // Get active mini controller
         miniController = GetComponentInParent<AssignLetters>().transform.parent
             .GetComponentInChildren<MiniController>();
         
@@ -22,5 +23,7 @@ public class LetterButton : MonoBehaviour
     public void OnPress()
     {
         miniController.ActiveMiniTileSorting.selected.text = letter;
+        miniController.ActiveMiniTileSorting.selected.onValueChanged.Invoke(letter); // Activate onValueChanged even if you write the same letter
+        //TODO: Should fix for keyboard also
     }
 }

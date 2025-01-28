@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d6f5a90ac22c35499e0c5484e12117a
+guid: 46f3eb2d6336eec43868af24ea948173
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,7 +119,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Keyboard
+  - name: BottomBackground
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -128,9 +128,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 216
-      height: 122
-    spriteID: 76602d82f02791642a45eb54b2487775
+      width: 207
+      height: 156
+    spriteID: 79c1e9bb8d46ca64eaaa775c7e2d9740
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 702132105
-    name: Keyboard
+    guid: 2046368665
+    name: BottomBackground
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Keyboard
+    - name: BottomBackground
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 216
-        height: 122
-      spriteId: 76602d82f02791642a45eb54b2487775
+        width: 207
+        height: 156
+      spriteId: 79c1e9bb8d46ca64eaaa775c7e2d9740
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 216, y: 127}
+  canvasSize: {x: 207, y: 156}

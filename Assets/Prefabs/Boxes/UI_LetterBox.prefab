@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 16
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 4096
+  m_VerticalAlignment: 8192
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.4012549, g: 0.6698113, b: 0.6698113, a: 1}
+    m_SelectedColor: {r: 0.13683698, g: 0.23584908, b: 0.23584908, a: 1}
     m_DisabledColor: {r: 0, g: 1, b: 0.13257027, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

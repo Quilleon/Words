@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class MiniController : MonoBehaviour
 {
-    public TileSorting ActiveMiniTileSorting;
-    
+    public TileSorting ActiveMiniTileSorting; // Used on keyboard button to check which mini.selected is written in
+
+    //private TileSorting[] allMinis;
     
     void Start()
     {
-        var allMinis = GetComponentsInChildren<TileSorting>();
-        foreach (var mini in allMinis)
+        var allActiveMinis = GetComponentsInChildren<TileSorting>();
+        foreach (var mini in allActiveMinis)
         {
-            //var mini = miniScript.gameObject;
-            
             if (mini.gameObject.activeSelf)
                 ActiveMiniTileSorting = mini;
         }
+    }
+
+    public void ClearMinis() // Is called on buttons when selecting mini
+    {
+        print("Disable all minis");
+        
+        var allActiveMinis = GetComponentsInChildren<TileSorting>();
+
+        foreach (var mini in allActiveMinis)
+        {
+            //print(mini.name);
+            mini.gameObject.SetActive(false);
+        }
+            
+    }
+
+    public void ActivateMini(int childNum) // Is used on mini selection buttons
+    {
+        var activatedMini = transform.GetChild(childNum).gameObject;
+
+        activatedMini.SetActive(true);
+        ActiveMiniTileSorting = activatedMini.GetComponent<TileSorting>();
     }
 
     // Update is called once per frame
