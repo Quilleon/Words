@@ -123,6 +123,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
     
     private bool _hasResetThisFrame;
     
+    //TODO: This should not happen every frame!
     void ActivateWord()
     {
         if (selected != prevSelected || horizontal != _prevHorizontalValue)
@@ -217,14 +218,25 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Reveal word hint
         //print(gridY + " - " + selectedYValue + " -1");
 
-        // hint based on how many words in row + number of word in the row
-        int hint = 0;
+        // Hint based on how many words in row + the number of the word in the row
+        int hint = -1;
         for (int i = 0; i < gridY-1 - selectedYValue; i++)
+        {
+            print("Added " + _horizontalWords[i]);
             hint += _horizontalWords[i]; // Add in all previous rows before your row
-        hint += _numWordInRowColumn; // Add which
+        }
+        hint += _numWordInRowColumn; // Add which word in row this is
+        
+        if (_horizontalWords[hint+1] != 0)
+        {
+            activeWordHint = horizontal ? horizontalWordHints[hint] : verticalWordHints[selectedXValue];
+        }
+        else
+        {
+            activeWordHint = "";
+        }
         
         
-        activeWordHint = horizontal ? horizontalWordHints[hint] : verticalWordHints[selectedXValue];
         //activeWordHint = horizontal ? horizontalWordHints[hint-1] : verticalWordHints[selectedXValue];
         
         //print(activeWordHint);
@@ -241,31 +253,42 @@ public class TileSorting : MonoBehaviour // TileMaster???
     {
         // Reset when looking at column
         _numWordInRowColumn = 0;
+
+        var iExtremeValue = (tempHorizontal ? gridX : gridY) -1;
                 
-        for (int i = 0; i < (tempHorizontal ? gridX : gridY); i++)
+        for (int i = 0; i <= iExtremeValue; i++)
         {
-            var letterBox = tempHorizontal ? _crossWord[i, selectedYValue] : _crossWord[selectedXValue, i];
-            if (letterBox != null)
+            var letterBox_i = tempHorizontal ? _crossWord[i, selectedYValue] : _crossWord[selectedXValue, i];
+            
+            if (letterBox_i != null)
             {
-                letterBoxesInCurrentWord.Add(letterBox);
-                        
+                letterBoxesInCurrentWord.Add(letterBox_i);
+                
                 //numberOfLettersInWord++;
             }
-            else if (letterBox == null && letterBoxesInCurrentWord.Count > 0) // When you meet an empty box after starting a word 
+            
+            if ((letterBox_i == null && letterBoxesInCurrentWord.Count > 0) || i == iExtremeValue) // When you meet an empty box after starting a word or it is the last box in row/column
             {
-                if ((tempHorizontal ? selectedXValue : selectedYValue)> i) // Selected box has not been reached
+                //print("Empty space or end reached");
+                
+                if ((tempHorizontal ? selectedXValue : selectedYValue) > i) // Selected box has not been reached
                 {
+                    //print("Clear boxes!");
                     letterBoxesInCurrentWord.Clear();
                     _numWordInRowColumn++; // Word hint +1
                 }
                 else // Selected box is in the word
                 {
+                    //print("Correct Word");
                     _numWordInRowColumn++;
                     break;
                 }
             }
         }
+        
+        //print("Num of word in row is " + _numWordInRowColumn);
 
+        
         // Change all box colours in the word
         foreach (var box in letterBoxesInCurrentWord)
         {
@@ -408,14 +431,14 @@ public class TileSorting : MonoBehaviour // TileMaster???
         Vector2 prevPos = new Vector2();
         int randomInt = 0;
 
-        for (int y = gridY-1; y >= 0; y--)
+        for (int y = gridY-1; y >= 0; y--) // Iterate y-axis
         {
-            for (int x = 0; x <= gridX-1; x++)
+            for (int x = 0; x <= gridX-1; x++) // Iterate x-axis
             {
                 var box = _crossWord[x, y];
 
                 
-                if (x==gridX-1 && y==0) // Also check the last iteration
+                if (x==gridX-1 && y==0) // Also check the last iteration of the for loops
                 {
                     if (box)
                         charList.Add(box);
@@ -424,6 +447,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
                     {
                         _wordCount++;
                         //print("There is a word on the last row. (" + x + ", " + y + ")" );
+                        _horizontalWords[y]++;
                     }
                 }
                 
@@ -441,9 +465,9 @@ public class TileSorting : MonoBehaviour // TileMaster???
                     {
                         _wordCount++;
                         //print(x + ", " + y + " is the start of another word");
-
+                        
                         //print(prevPos.y);
-                        _horizontalWords[(int)prevPos.y]++;
+                        _horizontalWords[(int)prevPos.y]++; // Add word count to the row of the last checked box
                     }
                     //print(x + ", " + y + " is the start of something new");
                     
@@ -481,6 +505,6 @@ public class TileSorting : MonoBehaviour // TileMaster???
         print("Words in crossword: " + _wordCount);
 
         //print(_horizontalWords[3]);
-        //foreach (var num in _horizontalWords) print(num);
+        foreach (var num in _horizontalWords) print(num);
     }
 }
