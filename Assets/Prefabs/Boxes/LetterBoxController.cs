@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -61,8 +62,8 @@ public class LetterBoxController : MonoBehaviour
         _hasBeenSelected = true;
         
         //print("Selected");
-        //print(correctChar + " was selected");
-        _tileSorting.selected = _tmpInput; // TODO: Isn't initialized
+        //print(_tmpInput.text + " was selected");
+        _tileSorting.selected = _tmpInput; 
         
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
@@ -140,6 +141,7 @@ public class LetterBoxController : MonoBehaviour
     
     void Start()
     {
+        //print("Start() in " + name);
         _tmpInput = GetComponentInChildren<TMP_InputField>();
         _tileSorting = GetComponentInParent<TileSorting>();
         
@@ -153,9 +155,12 @@ public class LetterBoxController : MonoBehaviour
 
 
     }
-    
-    
-    
+
+    private void OnEnable()
+    {
+        //print("Was enabled");
+    }
+
     void Update()
     {
         

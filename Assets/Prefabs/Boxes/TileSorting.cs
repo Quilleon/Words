@@ -12,13 +12,18 @@ public class TileSorting : MonoBehaviour // TileMaster???
     [SerializeField] private string[] verticalWordHints;
     private string activeWordHint;
     private TMP_Text _wordHintDisplay;
-    
+
+    private bool _shouldSelectSelected;
     private void OnEnable() // Happens too damn fast
     {
-        print("Enabled: " + name);
-        
+        //print("Enabled: " + name);
+
         if (selected)
-            selected.Select();
+        {
+            _shouldSelectSelected = true;
+            //selected.Select();
+            //print("Selected " + selected.text + " in OnEnable()");
+        }
         
         // Select a box to start with
         //selected = transform.GetChild(0).GetComponentInChildren<TMP_InputField>();
@@ -28,7 +33,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
     
     void Start()
     {
-        //print("Start");
+        //print("Start function in " + name);
         _wordHintDisplay = GameObject.Find("Word Hint").GetComponent<TMP_Text>();
         
         
@@ -42,7 +47,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Select a box to start with
         selected = transform.GetChild(0).GetComponentInChildren<TMP_InputField>();
         selected.Select();
-        print(selected.text + " was selected");
+        //print(selected.text + " was selected");
         //print(selected.GetComponentInParent<LetterBoxController>().correctChar + " was selected");
     }
     
@@ -101,6 +106,12 @@ public class TileSorting : MonoBehaviour // TileMaster???
     // Update is called once per frame
     void Update()
     {
+        if (_shouldSelectSelected)
+        {
+            _shouldSelectSelected = false;
+            selected.Select(); 
+        }
+        
         ActivateWord();   
 
         _prevHorizontalValue = horizontal;
@@ -209,8 +220,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // hint based on how many words in row + number of word in the row
         int hint = 0;
         for (int i = 0; i < gridY-1 - selectedYValue; i++)
-            hint += _horizontalWords[i];
-        hint += _numWordInRowColumn;
+            hint += _horizontalWords[i]; // Add in all previous rows before your row
+        hint += _numWordInRowColumn; // Add which
         
         
         activeWordHint = horizontal ? horizontalWordHints[hint] : verticalWordHints[selectedXValue];
@@ -467,7 +478,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
             randomInt++;
         }*/
         
-        //print("Words in crossword: " + _wordCount);
+        print("Words in crossword: " + _wordCount);
 
         //print(_horizontalWords[3]);
         //foreach (var num in _horizontalWords) print(num);

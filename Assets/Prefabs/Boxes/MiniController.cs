@@ -20,7 +20,7 @@ public class MiniController : MonoBehaviour
 
     public void ClearMinis() // Is called on buttons when selecting mini
     {
-        print("Disable all minis");
+        //print("Disable all minis");
         
         var allActiveMinis = GetComponentsInChildren<TileSorting>();
 
