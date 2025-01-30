@@ -218,20 +218,17 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Reveal word hint
         //print(gridY + " - " + selectedYValue + " -1");
 
-        // Hint based on how many words in row + the number of the word in the row
-        int hint = -1;
-        int yValue = gridY - 1 - selectedYValue;
         
-        for (int i = 0; i < yValue; i++)
+        
+        int yValueReversed = gridY - 1 - selectedYValue;
+
+        if (horizontal && _horizontalWords[yValueReversed] != 0)
         {
-            print("Added " + _horizontalWords[i]);
-            hint += _horizontalWords[i]; // Add in all previous rows before your row
+            activeWordHint = horizontalWordHints[WhichHint()];
         }
-        hint += _numWordInRowColumn; // Add which word in row this is
-        
-        if (_horizontalWords[yValue] != 0)
+        else if (!horizontal && _verticalWords[selectedXValue] != 0)
         {
-            activeWordHint = horizontal ? horizontalWordHints[hint] : verticalWordHints[selectedXValue];
+            activeWordHint = verticalWordHints[WhichHint()];
         }
         else
         {
@@ -249,6 +246,23 @@ public class TileSorting : MonoBehaviour // TileMaster???
         
         _prevHorizontalValue = horizontal;
         prevSelected = selected;
+    }
+
+    int WhichHint() // Hint based on how many words in row + the number of the word in the row
+    {
+        int hint = -1;
+        
+        int yValueReversed = gridY - 1 - selectedYValue;
+
+        
+        for (int i = 0; i < (horizontal ? yValueReversed : selectedXValue); i++)
+        {
+            //print("Added " + _horizontalWords[i]);
+            hint += horizontal ? _horizontalWords[i] : _verticalWords[i]; // Add in all previous rows before your row
+        }
+        hint += _numWordInRowColumn; // Add which word in row this is
+        
+        return hint;
     }
 
     void HighlightWord(bool tempHorizontal)
@@ -315,7 +329,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
     private bool assignCharacters, doSorting;
     [SerializeField] private bool validate;
 
-    private int[] _horizontalWords;
+    private int[] _horizontalWords, _verticalWords;
     private int _wordCount;
 
     int ParentPositionValue(char xy, Transform obj)
@@ -349,7 +363,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Get all children
         List<LetterBoxController> controllerList = new List<LetterBoxController>();
         controllerList.AddRange(transform.GetComponentsInChildren<LetterBoxController>());
-
+        
+        
         foreach (var controller in controllerList)
         {
             if (assignCharacters) // Assign Current Char as Correct Char
@@ -428,11 +443,13 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
         // Counting words in crossword
         _horizontalWords = new int[gridX];
+        _verticalWords = new int[gridY];
         
         List<TMP_InputField> charList = new List<TMP_InputField>();
         Vector2 prevPos = new Vector2();
         int randomInt = 0;
 
+        // Horizontal Words
         for (int y = gridY-1; y >= 0; y--) // Iterate y-axis
         {
             for (int x = 0; x <= gridX-1; x++) // Iterate x-axis
@@ -451,6 +468,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
                         //print("There is a word on the last row. (" + x + ", " + y + ")" );
                         _horizontalWords[y]++;
                     }
+                    
+                    continue;
                 }
                 
                 
@@ -481,32 +500,79 @@ public class TileSorting : MonoBehaviour // TileMaster???
                 randomInt++;
             }
         }
-        /*
-        foreach (var box in _crossWord)
-        {
-            if (!box)
-                continue;
-            
-            var boxPos = new Vector2(PositionValue('x', box.transform), PositionValue('y', box.transform));
-            
-            if (randomInt == 0)
-            {
-                
-            }
-            else if (!(prevPos.x +1 == boxPos.x)) //|| prevPos.y == boxPos.y
-            {
-                charList.Clear();
-                charList.Add(box);
-                _wordCount++;
-            }
-            
-            prevPos = boxPos;
-            randomInt++;
-        }*/
         
-        print("Words in crossword: " + _wordCount);
+        charList.Clear();
+        //charList = new List<TMP_InputField>();
+        prevPos = new Vector2();
+        randomInt = 0;
+        
+        // Vertical Words
+        for (int x = 0; x <= gridX-1; x++) // Iterate x-axis
+        {
+            for (int y = gridY-1; y >= 0; y--) // Iterate y-axis
+            {
+                var box = _crossWord[x, y];
+
+                
+                if (x==gridX-1 && y==0) // Also check the last iteration of the for-loops
+                {
+                    if (box)
+                        charList.Add(box);
+                    
+                    if (charList.Count > 1)
+                    {
+                        //_wordCount++;
+                        //print("There is a word on the last column. (" + x + ", " + y + ")" );
+                        _verticalWords[x]++;
+                    }
+                    continue;
+                }
+                
+                
+                if (!box) continue; // If there is no box, skip this iteration
+                
+                //print(x + ", " + y); // Registered boxes
+                
+                if (randomInt == 0) // If first box
+                { }
+                else if (prevPos.y -1 != y || prevPos.x != x) // If there is a gap between letters, there is a new line, or it is the last iteration
+                {
+                    if (charList.Count > 1)
+                    {
+                        //_wordCount++;
+                        //print(x + ", " + y + " is the start of another word");
+                        
+                        //print(prevPos.y);
+                        _verticalWords[(int)prevPos.x]++; // Add word count to the row of the last checked box
+                    }
+                    //print(x + ", " + y + " is the start of something new");
+                    
+                    charList.Clear();
+                }
+
+                charList.Add(box);
+                prevPos = new Vector2(x, y);
+                randomInt++;
+            }
+        }
+
+        
+        #region Prints
+
+        // Print number of horizontal words
+        //var numHorizontalWords = 0; foreach (var row in _horizontalWords) numHorizontalWords += row; print("Horizontal words in crossword: " + numHorizontalWords);
+        
+        //foreach (var num in _horizontalWords) print(num);
+        
+        // Print number of vertical words
+        //var numVerticalWords = 0; foreach (var column in _verticalWords) numVerticalWords += column; print("Vertical words in crossword: " + numVerticalWords);
+        
+        //foreach (var num in _verticalWords) print(num);
+        
 
         //print(_horizontalWords[3]);
-        foreach (var num in _horizontalWords) print(num);
+        //foreach (var num in _horizontalWords) print(num);
+
+        #endregion
     }
 }

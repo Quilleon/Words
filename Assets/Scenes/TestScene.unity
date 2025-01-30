@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 952417424428254321, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: validate
@@ -3119,9 +3119,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Word Hint
-
-    Second line'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a7c69e568e9c55546961005d65beb66f, type: 2}
   m_sharedMaterial: {fileID: 8294637420756846280, guid: a7c69e568e9c55546961005d65beb66f, type: 2}
