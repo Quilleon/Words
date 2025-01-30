@@ -220,14 +220,16 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
         // Hint based on how many words in row + the number of the word in the row
         int hint = -1;
-        for (int i = 0; i < gridY-1 - selectedYValue; i++)
+        int yValue = gridY - 1 - selectedYValue;
+        
+        for (int i = 0; i < yValue; i++)
         {
             print("Added " + _horizontalWords[i]);
             hint += _horizontalWords[i]; // Add in all previous rows before your row
         }
         hint += _numWordInRowColumn; // Add which word in row this is
         
-        if (_horizontalWords[hint+1] != 0)
+        if (_horizontalWords[yValue] != 0)
         {
             activeWordHint = horizontal ? horizontalWordHints[hint] : verticalWordHints[selectedXValue];
         }

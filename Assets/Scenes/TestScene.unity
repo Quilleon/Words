@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 952417424428254321, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: validate
@@ -150,6 +150,38 @@ PrefabInstance:
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: displayCorrectChar
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[0]
+      value: What the K in CMYK stand for
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[1]
+      value: A place where you can find urns (easy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[2]
+      value: 'Video game character in a forest '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[3]
+      value: ___ball, used to catch bug and water type pokemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[4]
+      value: Barack o___
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[5]
+      value: One of the singers in the KPOP band ITZY
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHints.Array.data[6]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8263755483360739863, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2673,7 +2705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2309149364657937509, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
