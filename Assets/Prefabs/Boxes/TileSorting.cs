@@ -123,7 +123,14 @@ public class TileSorting : MonoBehaviour // TileMaster???
             selected.Select(); 
         }
         
-        ActivateWord();   
+        if (prevSelected && selected != prevSelected)
+        {
+            prevSelected.GetComponentInParent<LetterBoxController>().ChangeAppearance(0);
+        }
+        
+        ActivateWord();
+
+        
 
         _prevHorizontalValue = horizontal;
         prevSelected = selected;
@@ -177,7 +184,6 @@ public class TileSorting : MonoBehaviour // TileMaster???
             //print(activeWordHint);
             //_wordHintDisplay.text = activeWordHint;
             
-// TODO: Remove this
             //int numberOfLettersInWord = 0;
             
             letterBoxesInCurrentWord = new List<TMP_InputField>();
@@ -321,7 +327,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         {
             var colours = box.colors;
             colours.normalColor = extra;
-            box.colors = colours;
+            //box.colors = colours;
                     
             //print("Changed horizontal colours");
         }

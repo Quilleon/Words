@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using TMPro;
 using UnityEngine;
 
@@ -24,16 +25,26 @@ public class LetterButton : MonoBehaviour
 
     public void OnPress()
     {
-        miniController.ActiveMiniTileSorting.selected.text = letter;
-        miniController.ActiveMiniTileSorting.selected.onValueChanged.Invoke(letter); // Activate onValueChanged even if you write the same letter
-        //TODO: Should fix for keyboard also
+        var tileSorting = miniController.ActiveMiniTileSorting;
+        
+        tileSorting.selected.text = letter;
+        tileSorting.SelectNextBox(true);
+        
+        //tileSorting.selected.onValueChanged.Invoke(letter); // Activate onValueChanged even if you write the same letter
     }
 
     public void OnBackspacePress()
     {
+        var tileSorting = miniController.ActiveMiniTileSorting;
+        
         // If there is a character there
-        if (miniController.ActiveMiniTileSorting.selected.text != "") miniController.ActiveMiniTileSorting.selected.text = ""; // Set selected to empty
-        else miniController.ActiveMiniTileSorting.SelectNextBox(false);
+        if (tileSorting.selected.text != "") 
+            tileSorting.selected.text = ""; // Set selected to empty
+        else // If not
+        {
+            tileSorting.SelectNextBox(false);
+            tileSorting.selected.text = "";
+        }
         
         
         

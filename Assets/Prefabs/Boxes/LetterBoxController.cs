@@ -10,6 +10,13 @@ using UnityEngine.UI;
 public class LetterBoxController : MonoBehaviour
 {
     private TMP_InputField _tmpInput;
+    private TMP_Text _tmpText;
+    private Image _image;
+
+    [SerializeField] private Color32 defaultTextColour, selectedTextColour;
+    [SerializeField] private Sprite defaultSprite, selectedSprite;
+    
+    
     private TileSorting _tileSorting;
     private Button _button;
 
@@ -56,9 +63,28 @@ public class LetterBoxController : MonoBehaviour
     #region Button Functions
 
     private bool _hasBeenSelected = false; // Only check for change in input after being selected
+
+    public void ChangeAppearance(int mode)
+    {
+        switch (mode)
+        {
+            case 0:
+                _tmpText.color = defaultTextColour;
+                _image.sprite = defaultSprite;
+                break;
+            case 1:
+                _tmpText.color = selectedTextColour;
+                _image.sprite = selectedSprite;
+                break;
+            default: Debug.LogError("Wrong input for ChangeAppearance()!");
+                break;
+        }
+        
+    }
     
     public void Selected()
     {
+        ChangeAppearance(1);
         
         _hasBeenSelected = true;
         
@@ -74,10 +100,15 @@ public class LetterBoxController : MonoBehaviour
         //_tmpInput.interactable = false;
         
         //_button.gameObject.SetActive(true);
+
+        
     }
 
     public void Deselected()
     {
+        
+        //ChangeAppearance(0);
+        
         print("Deselected!");
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
@@ -103,10 +134,10 @@ public class LetterBoxController : MonoBehaviour
         
         // Skip to the next letterbox in the sequence/word
         //print(_tmpInput.text);
-        if (CompareInputText("")) _tileSorting.SelectNextBox(false);
-        else _tileSorting.SelectNextBox(true); 
         
-        
+        //_tileSorting.SelectNextBox(!CompareInputText(""));
+
+
         // If no more boxes, just stay on the same one or select the next word
         
         //nextBox.Select();
@@ -147,6 +178,9 @@ public class LetterBoxController : MonoBehaviour
     {
         //print("Start() in " + name);
         _tmpInput = GetComponentInChildren<TMP_InputField>();
+        _tmpText = GetComponentInChildren<TMP_Text>();
+        _image = GetComponent<Image>();
+        
         _tileSorting = GetComponentInParent<TileSorting>();
         
         _button = GetComponentInChildren<Button>();
