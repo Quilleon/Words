@@ -78,12 +78,23 @@ public class TileSorting : MonoBehaviour // TileMaster???
         
         // Select next box
         var currentBox = _crossWord[selectedXValue, selectedYValue];
-        var nextBox = (horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY]);
+        var nextBox = horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY];
         
+        print(nextX + ", " + selectedYValue);
+
         if (nextBox) // if there is a box there
+        {
+            selected = nextBox;
             nextBox.Select();
+            
+        }
         else // if not
+        {
+            //selected = currentBox;
             currentBox.Select();
+        }
+        
+        
         
         
         //(horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY]).GetComponentInParent<LetterBoxController>().ButtonFunction();

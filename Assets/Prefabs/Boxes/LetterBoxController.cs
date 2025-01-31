@@ -31,18 +31,19 @@ public class LetterBoxController : MonoBehaviour
     public void ClearCharacter()
     {
         _tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
-        _tmpInput.text = null;
+        ChangeInputText(null);
     }
 
     public void DisplayCorrectChar()
     {
         _tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
-        _tmpInput.text = correctChar.ToString();
+        ChangeInputText(correctChar.ToString());
     }
     
     public bool IsCorrectChar()
     {
-        return correctChar == _tmpInput.text.ToCharArray()[0];
+        //return correctChar == _tmpInput.text.ToCharArray()[0];
+        return CompareInputText(correctChar.ToString()); 
     }
     
     
@@ -54,7 +55,7 @@ public class LetterBoxController : MonoBehaviour
 
     #region Button Functions
 
-    private bool _hasBeenSelected = false;
+    private bool _hasBeenSelected = false; // Only check for change in input after being selected
     
     public void Selected()
     {
@@ -63,7 +64,7 @@ public class LetterBoxController : MonoBehaviour
         
         //print("Selected");
         //print(_tmpInput.text + " was selected");
-        _tileSorting.selected = _tmpInput; 
+        _tileSorting.selected = _tmpInput; // Set tileSorting selected
         
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
@@ -77,14 +78,14 @@ public class LetterBoxController : MonoBehaviour
 
     public void Deselected()
     {
-        //print("Deselected!");
+        print("Deselected!");
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
         if (_tileSorting.selected == _tmpInput )
         {
             //_tileSorting.selected = null;
             print("Re-selected");
-            _tmpInput.Select();
+            //_tmpInput.Select();
         }
         
         //_tmpInput.interactable = true;
@@ -92,7 +93,7 @@ public class LetterBoxController : MonoBehaviour
         //_button.gameObject.SetActive(false);
     }
 
-    private string _prevText = "";
+    //private string _prevText = "";
     public void OnValueChanged() // changed the string attached to tmpInput
     {
         if (!_hasBeenSelected)
@@ -100,19 +101,17 @@ public class LetterBoxController : MonoBehaviour
         
         // If there is no character(deleted current character), don't do anything
         
-        if (_tmpInput.text == "")
-            _tileSorting.SelectNextBox(false);
-        
-        
         // Skip to the next letterbox in the sequence/word
-        _tileSorting.SelectNextBox(true);
+        //print(_tmpInput.text);
+        if (CompareInputText("")) _tileSorting.SelectNextBox(false);
+        else _tileSorting.SelectNextBox(true); 
         
         
         // If no more boxes, just stay on the same one or select the next word
         
         //nextBox.Select();
         
-        _prevText = _tmpInput.text;
+        //_prevText = _tmpInput.text;
     }
     
     public void ButtonFunction() // Change between horizontal and vertical
@@ -132,9 +131,14 @@ public class LetterBoxController : MonoBehaviour
 
 
 
-    public void ChangeText(string newText)
+    public void ChangeInputText(string newText)
     {
         _tmpInput.text = newText;
+    }
+
+    public bool CompareInputText(string text)
+    {
+        return _tmpInput.text == text;
     }
     
     
