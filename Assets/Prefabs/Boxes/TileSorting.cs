@@ -205,7 +205,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
                 _hasResetThisFrame = true;
                 
                 _prevHorizontalValue = horizontal;
-                //ChangeOrientation();
+                ChangeOrientation();
                 
                 prevSelected = selected;
                 
