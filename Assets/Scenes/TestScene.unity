@@ -152,8 +152,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: horizontalWordHints.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[0]
+      value: Internett adress
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[1]
+      value: Half the word of a norwegian videogame company
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[2]
+      value: A pro french rocket league player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[3]
+      value: One of Christophers usual replies
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[4]
+      value: A pokemon based on a winged insect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[5]
+      value: The protagonist of CrossCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHints.Array.data[6]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: horizontalWordHints.Array.data[0]
