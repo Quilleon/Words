@@ -442,8 +442,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
 
         // Counting words in crossword
-        _horizontalWords = new int[gridX];
-        _verticalWords = new int[gridY];
+        _horizontalWords = new int[gridY];
+        _verticalWords = new int[gridX];
         
         List<TMP_InputField> charList = new List<TMP_InputField>();
         Vector2 prevPos = new Vector2();
@@ -455,7 +455,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
             for (int x = 0; x <= gridX-1; x++) // Iterate x-axis
             {
                 var box = _crossWord[x, y];
-
+                
+                //print("Checked: (" + x + ", " + y + ")" );
                 
                 if (x==gridX-1 && y==0) // Also check the last iteration of the for loops
                 {
