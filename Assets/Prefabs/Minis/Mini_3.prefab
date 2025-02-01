@@ -158,23 +158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalWordHints:
-  - 
   - What the K in CMYK stand for
   - A place where you can find urns (easy)
   - 'Video game character in a forest '
   - ___ball, used to catch bug and water type pokemon
   - Barack o___
   - One of the singers in the KPOP band ITZY
-  - 
   verticalWordHints:
-  - 
   - Internett adress
   - Half the word of a norwegian videogame company
   - A pro french rocket league player
   - One of Christophers usual replies
   - A pokemon based on a winged insect
   - The protagonist of CrossCode
-  - 
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}

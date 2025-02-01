@@ -7,6 +7,8 @@ public class MiniController : MonoBehaviour
     public TileSorting ActiveMiniTileSorting; // Used on keyboard button to check which mini.selected is written in
 
     //private TileSorting[] allMinis;
+
+    [SerializeField] private Color32 normal, highlighted;
     
     void Start()
     {
@@ -38,6 +40,9 @@ public class MiniController : MonoBehaviour
 
         activatedMini.SetActive(true);
         ActiveMiniTileSorting = activatedMini.GetComponent<TileSorting>();
+
+        ActiveMiniTileSorting.normal = normal;
+        ActiveMiniTileSorting.extra = highlighted;
     }
 
     // Update is called once per frame

@@ -152,64 +152,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[0]
-      value: Internett adress
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[1]
-      value: Half the word of a norwegian videogame company
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[2]
-      value: A pro french rocket league player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[3]
-      value: One of Christophers usual replies
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[4]
-      value: A pokemon based on a winged insect
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[5]
-      value: The protagonist of CrossCode
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: verticalWordHints.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[0]
-      value: What the K in CMYK stand for
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[1]
-      value: A place where you can find urns (easy)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[2]
-      value: 'Video game character in a forest '
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[3]
-      value: ___ball, used to catch bug and water type pokemon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[4]
-      value: Barack o___
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[5]
-      value: One of the singers in the KPOP band ITZY
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: horizontalWordHints.Array.data[6]
@@ -5226,6 +5170,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveMiniTileSorting: {fileID: 0}
+  normal:
+    serializedVersion: 2
+    rgba: 4294967295
+  highlighted:
+    serializedVersion: 2
+    rgba: 4293387706
 --- !u!1001 &2108973610
 PrefabInstance:
   m_ObjectHideFlags: 0

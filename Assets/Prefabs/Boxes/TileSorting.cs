@@ -108,7 +108,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
     public TMP_InputField prevSelected;
     private bool _prevHorizontalValue;
     
-    [SerializeField] private Color normal, extra;
+    [HideInInspector] public Color normal, extra;
 
     private int _numWordInRowColumn;
 
@@ -288,33 +288,69 @@ public class TileSorting : MonoBehaviour // TileMaster???
         _numWordInRowColumn = 0;
 
         var iExtremeValue = (tempHorizontal ? gridX : gridY) -1;
-                
-        for (int i = 0; i <= iExtremeValue; i++)
+
+        //TODO: Make a function out of this
+        if (tempHorizontal)
         {
-            var letterBox_i = tempHorizontal ? _crossWord[i, selectedYValue] : _crossWord[selectedXValue, i];
-            
-            if (letterBox_i != null)
+            for (int i = 0; i <= iExtremeValue; i++)
             {
-                letterBoxesInCurrentWord.Add(letterBox_i);
+                var letterBox_i = tempHorizontal ? _crossWord[i, selectedYValue] : _crossWord[selectedXValue, i];
                 
-                //numberOfLettersInWord++;
-            }
-            
-            if ((letterBox_i == null && letterBoxesInCurrentWord.Count > 0) || i == iExtremeValue) // When you meet an empty box after starting a word or it is the last box in row/column
-            {
-                //print("Empty space or end reached");
-                
-                if ((tempHorizontal ? selectedXValue : selectedYValue) > i) // Selected box has not been reached
+                if (letterBox_i != null)
                 {
-                    //print("Clear boxes!");
-                    letterBoxesInCurrentWord.Clear();
-                    _numWordInRowColumn++; // Word hint +1
+                    letterBoxesInCurrentWord.Add(letterBox_i);
+                    
+                    //numberOfLettersInWord++;
                 }
-                else // Selected box is in the word
+                
+                if ((letterBox_i == null && letterBoxesInCurrentWord.Count > 0) || i == iExtremeValue) // When you meet an empty box after starting a word or it is the last box in row/column
                 {
-                    //print("Correct Word");
-                    _numWordInRowColumn++;
-                    break;
+                    //print("Empty space or end reached");
+                    
+                    if ((tempHorizontal ? selectedXValue : selectedYValue) > i) // Selected box has not been reached
+                    {
+                        //print("Clear boxes!");
+                        letterBoxesInCurrentWord.Clear();
+                        _numWordInRowColumn++; // Word hint +1
+                    }
+                    else // Selected box is in the word
+                    {
+                        //print("Correct Word");
+                        _numWordInRowColumn++;
+                        break;
+                    }
+                }
+            }
+        }
+        else // vertical
+        {
+            for (int i = iExtremeValue; i >= 0; i--)
+            {
+                var letterBox_i = tempHorizontal ? _crossWord[i, selectedYValue] : _crossWord[selectedXValue, i];
+                
+                if (letterBox_i != null)
+                {
+                    letterBoxesInCurrentWord.Add(letterBox_i);
+                    
+                    //numberOfLettersInWord++;
+                }
+                
+                if ((letterBox_i == null && letterBoxesInCurrentWord.Count > 0) || i == 0) // When you meet an empty box after starting a word or it is the last box in row/column
+                {
+                    //print("Empty space or end reached");
+                    
+                    if ((tempHorizontal ? selectedXValue > i : selectedYValue < i) ) // Selected box has not been reached
+                    {
+                        //print("Clear boxes!");
+                        letterBoxesInCurrentWord.Clear();
+                        _numWordInRowColumn++; // Word hint +1
+                    }
+                    else // Selected box is in the word
+                    {
+                        //print("Correct Word");
+                        _numWordInRowColumn++;
+                        break;
+                    }
                 }
             }
         }
@@ -327,7 +363,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         {
             var colours = box.colors;
             colours.normalColor = extra;
-            //box.colors = colours;
+            box.colors = colours;
                     
             //print("Changed horizontal colours");
         }
