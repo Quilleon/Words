@@ -5,11 +5,12 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LetterBoxController : MonoBehaviour
 {
-    private TMP_InputField _tmpInput;
+    public TMP_InputField tmpInput;
     private TMP_Text _tmpText;
     private Image _image;
 
@@ -30,20 +31,20 @@ public class LetterBoxController : MonoBehaviour
 
     public void AssignCorrectChar()
     {
-        _tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
+        tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
 
-        correctChar = _tmpInput.text.ToCharArray()[0];
+        correctChar = tmpInput.text.ToCharArray()[0];
     }
     
     public void ClearCharacter()
     {
-        _tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
+        tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
         ChangeInputText(null);
     }
 
     public void DisplayCorrectChar()
     {
-        _tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
+        tmpInput = GetComponentInChildren<TMP_InputField>(); // Needed for validate
         ChangeInputText(correctChar.ToString());
     }
     
@@ -90,7 +91,7 @@ public class LetterBoxController : MonoBehaviour
         
         //print("Selected");
         //print(_tmpInput.text + " was selected");
-        _tileSorting.selected = _tmpInput; // Set tileSorting selected
+        _tileSorting.selected = tmpInput; // Set tileSorting selected
         
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
@@ -112,7 +113,7 @@ public class LetterBoxController : MonoBehaviour
         print("Deselected!");
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
-        if (_tileSorting.selected == _tmpInput )
+        if (_tileSorting.selected == tmpInput )
         {
             //_tileSorting.selected = null;
             print("Re-selected");
@@ -148,12 +149,12 @@ public class LetterBoxController : MonoBehaviour
     public void ButtonFunction() // Change between horizontal and vertical
     {
         // If button action happens twice
-        if (_tileSorting.prevSelected == _tmpInput)
+        if (_tileSorting.prevSelected == tmpInput)
         {
             _tileSorting.ChangeOrientation();
         }
         
-        _tmpInput.Select();
+        tmpInput.Select();
         //_tileSorting.selected = _tmpInput;
         //TouchScreenKeyboard.Open("");
     }
@@ -164,12 +165,12 @@ public class LetterBoxController : MonoBehaviour
 
     public void ChangeInputText(string newText)
     {
-        _tmpInput.text = newText;
+        tmpInput.text = newText;
     }
 
     public bool CompareInputText(string text)
     {
-        return _tmpInput.text == text;
+        return tmpInput.text == text;
     }
     
     
@@ -177,7 +178,7 @@ public class LetterBoxController : MonoBehaviour
     void Start()
     {
         //print("Start() in " + name);
-        _tmpInput = GetComponentInChildren<TMP_InputField>();
+        tmpInput = GetComponentInChildren<TMP_InputField>();
         _tmpText = GetComponentInChildren<TMP_Text>();
         _image = GetComponent<Image>();
         

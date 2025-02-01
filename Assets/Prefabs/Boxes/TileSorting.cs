@@ -84,14 +84,14 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
         if (nextBox) // if there is a box there
         {
-            selected = nextBox;
-            nextBox.Select();
+            selected = nextBox.tmpInput;
+            selected.Select();
             
         }
         else // if not
         {
             //selected = currentBox;
-            currentBox.Select();
+            currentBox.tmpInput.Select();
         }
         
         
@@ -136,8 +136,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
         prevSelected = selected;
     }
 
-
-    private List<TMP_InputField> letterBoxesInCurrentWord;
+    
+    private List<LetterBoxController> letterBoxesInCurrentWord;
     
     private bool _hasResetThisFrame;
     
@@ -153,9 +153,9 @@ public class TileSorting : MonoBehaviour // TileMaster???
             {
                 if (letterBox != null)
                 {
-                    var colours = letterBox.colors;
+                    var colours = letterBox.tmpInput.colors;
                     colours.normalColor = normal;
-                    letterBox.colors = colours;
+                    letterBox.tmpInput.colors = colours;
                 }
             }
             
@@ -173,8 +173,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
             
             //print("Change word colour");
             
-            selectedXValue = ParentPositionValue('x', selected.transform) - lowX;
-            selectedYValue = ParentPositionValue('y', selected.transform) - lowY;
+            selectedXValue = ParentPositionValue('x', selected.transform.parent) - lowX;
+            selectedYValue = ParentPositionValue('y', selected.transform.parent) - lowY;
             
             //print(selected.transform.parent.position);
             //print("(" + selectedXValue + "," + selectedYValue + ")");
@@ -186,7 +186,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
             
             //int numberOfLettersInWord = 0;
             
-            letterBoxesInCurrentWord = new List<TMP_InputField>();
+            letterBoxesInCurrentWord = new List<LetterBoxController>();
             
             
             HighlightWord(horizontal);
@@ -361,9 +361,9 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Change all box colours in the word
         foreach (var box in letterBoxesInCurrentWord)
         {
-            var colours = box.colors;
+            var colours = box.tmpInput.colors;
             colours.normalColor = extra;
-            box.colors = colours;
+            box.tmpInput.colors = colours;
                     
             //print("Changed horizontal colours");
         }
@@ -373,7 +373,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
     
     //[SerializeField] private float distanceBetweenTiles = 1f;
     
-    private TMP_InputField[,] _crossWord; // Matrix of the letterBoxes
+    private LetterBoxController[,] _crossWord; // Matrix of the letterBoxes
     private int gridX, gridY; // Number of rows and columns in a matrix (NB! starts at 1)
     private int highX, lowX, highY, lowY; // x and y extreme positions
     
@@ -387,7 +387,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
     int ParentPositionValue(char xy, Transform obj)
     {
-        var pos = obj.parent.localPosition;
+        //var pos = obj.parent.localPosition;
+        var pos = obj.localPosition;
         
         switch (xy)
         {
@@ -436,8 +437,8 @@ public class TileSorting : MonoBehaviour // TileMaster???
             return;
         
         // Get all children
-        List<TMP_InputField> childList = new List<TMP_InputField>();
-        childList.AddRange(transform.GetComponentsInChildren<TMP_InputField>());
+        List<LetterBoxController> childList = new List<LetterBoxController>();
+        childList.AddRange(transform.GetComponentsInChildren<LetterBoxController>());
         //print("Number of boxes under crossword: " + childList.Count);
         
         
@@ -473,7 +474,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         gridX = highX - lowX + 1;
         gridY = highY - lowY + 1;
         
-        _crossWord = new TMP_InputField[gridX,gridY]; //TMP_InputField[,] letterGrid = new TMP_InputField[gridX,gridY]; // 2D array
+        _crossWord = new LetterBoxController[gridX,gridY]; //TMP_InputField[,] letterGrid = new TMP_InputField[gridX,gridY]; // 2D array
         //print("Grid = " + gridX + ", " + gridY); //Console.WriteLine("Grid is {1}, {2}", gridX, gridY);
 
         // Sort all squares into a 2D array (matrix)
@@ -498,7 +499,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         _horizontalWords = new int[gridY];
         _verticalWords = new int[gridX];
         
-        List<TMP_InputField> charList = new List<TMP_InputField>();
+        List<LetterBoxController> charList = new List<LetterBoxController>();
         Vector2 prevPos = new Vector2();
         int randomInt = 0;
 
