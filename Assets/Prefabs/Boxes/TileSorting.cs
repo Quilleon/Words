@@ -153,9 +153,13 @@ public class TileSorting : MonoBehaviour // TileMaster???
             {
                 if (letterBox != null)
                 {
+                    letterBox.ChangeAppearance(0);
+                    
+                    /*
                     var colours = letterBox.tmpInput.colors;
                     colours.normalColor = normal;
                     letterBox.tmpInput.colors = colours;
+                    */
                 }
             }
             
@@ -361,9 +365,16 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Change all box colours in the word
         foreach (var box in letterBoxesInCurrentWord)
         {
+            box.ChangeAppearance(1);
+            
+            if (box.tmpInput == selected)
+                box.ChangeAppearance(2);
+            
+            /*
             var colours = box.tmpInput.colors;
             colours.normalColor = extra;
             box.tmpInput.colors = colours;
+            */
                     
             //print("Changed horizontal colours");
         }

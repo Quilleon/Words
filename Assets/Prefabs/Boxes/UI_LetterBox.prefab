@@ -554,14 +554,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7166211dee2e034ab074d4f777c5570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tmpInput: {fileID: 0}
   defaultTextColour:
     serializedVersion: 2
     rgba: 4281479730
-  selectedTextColour:
+  highlightedTextColour:
     serializedVersion: 2
     rgba: 4289447102
+  defaultBoxColour:
+    serializedVersion: 2
+    rgba: 4294967295
+  selectedBoxColour:
+    serializedVersion: 2
+    rgba: 4293254059
   defaultSprite: {fileID: 3158477601838831935, guid: 59d28a45f72779343acb341bf3c9c90e, type: 3}
-  selectedSprite: {fileID: 1632247300204435945, guid: b2422b8e2eb173e498885a8bcee2e192, type: 3}
+  highlightedSprite: {fileID: 1632247300204435945, guid: b2422b8e2eb173e498885a8bcee2e192, type: 3}
   correctChar: 97
 --- !u!1 &8415660533143088577
 GameObject:

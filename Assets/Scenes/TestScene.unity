@@ -135,30 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mini_3
       objectReference: {fileID: 0}
-    - target: {fileID: 952417424428254321, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: validate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: clearCharacters
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: displayCorrectChar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHints.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHints.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8263755483360739863, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2667,21 +2643,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2108412271}
     m_Modifications:
-    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
-      propertyPath: clearCharacters
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
-      propertyPath: displayCorrectChar
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2309149364657937509, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
       propertyPath: m_Name
       value: Mini_1
       objectReference: {fileID: 0}
-    - target: {fileID: 2309149364657937509, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6541030681950793813, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4021,18 +4013,6 @@ PrefabInstance:
     - target: {fileID: 2170196201363789342, guid: fe7b27365bedaee4989fd876c3c60885, type: 3}
       propertyPath: m_Name
       value: Mini_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2170196201363789342, guid: fe7b27365bedaee4989fd876c3c60885, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2299884954844937677, guid: fe7b27365bedaee4989fd876c3c60885, type: 3}
-      propertyPath: clearCharacters
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2299884954844937677, guid: fe7b27365bedaee4989fd876c3c60885, type: 3}
-      propertyPath: displayCorrectChar
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5362686846267463813, guid: fe7b27365bedaee4989fd876c3c60885, type: 3}
       propertyPath: m_LocalPosition.x

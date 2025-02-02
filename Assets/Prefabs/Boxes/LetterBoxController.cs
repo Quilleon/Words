@@ -14,8 +14,9 @@ public class LetterBoxController : MonoBehaviour
     private TMP_Text _tmpText;
     private Image _image;
 
-    [SerializeField] private Color32 defaultTextColour, selectedTextColour;
-    [SerializeField] private Sprite defaultSprite, selectedSprite;
+    [SerializeField] private Color32 defaultTextColour, highlightedTextColour;
+    [SerializeField] private Color32 defaultBoxColour, selectedBoxColour;
+    [SerializeField] private Sprite defaultSprite, highlightedSprite;
     
     
     private TileSorting _tileSorting;
@@ -72,10 +73,16 @@ public class LetterBoxController : MonoBehaviour
             case 0:
                 _tmpText.color = defaultTextColour;
                 _image.sprite = defaultSprite;
+                _image.color = defaultBoxColour;
                 break;
             case 1:
-                _tmpText.color = selectedTextColour;
-                _image.sprite = selectedSprite;
+                _tmpText.color = highlightedTextColour;
+                _image.sprite = highlightedSprite;
+                _image.color = defaultBoxColour;
+                break;
+            case 2:
+                ChangeAppearance(1);
+                _image.color = selectedBoxColour;
                 break;
             default: Debug.LogError("Wrong input for ChangeAppearance()!");
                 break;
@@ -85,7 +92,7 @@ public class LetterBoxController : MonoBehaviour
     
     public void Selected()
     {
-        ChangeAppearance(1);
+        //ChangeAppearance(1);
         
         _hasBeenSelected = true;
         

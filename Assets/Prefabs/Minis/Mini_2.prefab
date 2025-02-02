@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5362686846267463813
 Transform:
   m_ObjectHideFlags: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}
   extra: {r: 0.403821, g: 0.7830189, b: 0.6911145, a: 1}
-  clearCharacters: 0
-  displayCorrectChar: 1
+  clearCharacters: 1
+  displayCorrectChar: 0
   validate: 0
 --- !u!1001 &2903835884508529
 PrefabInstance:
