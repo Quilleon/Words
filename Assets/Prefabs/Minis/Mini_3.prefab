@@ -164,6 +164,21 @@ MonoBehaviour:
   - ___ball, used to catch bug and water type pokemon
   - Barack o___
   - One of the singers in the KPOP band ITZY
+  horizontalWordHintArray:
+  - hints:
+    - What the K in CMYK stand for
+    - A place where you can find urns
+    - 'Video game character in a forest '
+    - ___ball, used to catch bug and water type pokemon
+    - Barack o___
+    - One of the singers in the K-POP band ITZY
+  - hints:
+    - 
+    - 
+    - A Yoruban metaphysical consept, meaning "head"
+    - Something used for catching insects
+    - A mammal tamed by the Incas for their produce and versitality
+    - 
   verticalWordHints:
   - Internett adress
   - Half the word of a norwegian videogame company
@@ -171,6 +186,21 @@ MonoBehaviour:
   - One of Christophers usual replies
   - A pokemon based on a winged insect
   - The protagonist of CrossCode
+  verticalWordHintArray:
+  - hints:
+    - Internett adress
+    - Half the word of a norwegian videogame company
+    - A pro french rocket league player
+    - One of Christophers usual replies
+    - A pokemon based on a winged insect
+    - The protagonist of CrossCode
+  - hints:
+    - 
+    - Tiny sea creatures which are essential for the biggest mammal on earth
+    - A state of tranquility
+    - Shortened expression of agreement
+    - Darner dragonfly in japanese (also the name of a dragonfly pokemon)
+    - A common female name in Norway
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}

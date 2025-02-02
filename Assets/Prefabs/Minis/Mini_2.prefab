@@ -160,12 +160,38 @@ MonoBehaviour:
   - 58008
   - Rude response to an idea
   - One of the four things a bride needs for good luck
+  horizontalWordHintArray:
+  - hints:
+    - Petname for bf/gf
+    - 07734
+    - 58008
+    - Rude response to an idea
+    - One of the four things a bride needs for good luck
+  - hints:
+    - 
+    - 
+    - 
+    - 
+    - 
   verticalWordHints:
   - Newly rebranded to "Max"
   - Bear character appearing in the Hobbit
   - One of Alan Walkers top songs, on the album "Different World"
   - Where the weenus is located
   - Something that can be bought in the steam store
+  verticalWordHintArray:
+  - hints:
+    - Newly rebranded to "Max"
+    - Bear character appearing in the Hobbit
+    - One of Alan Walkers top songs, on the album "Different World"
+    - Where the weenus is located
+    - Something that can be bought in the steam store
+  - hints:
+    - 
+    - 
+    - 
+    - 
+    - 
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}

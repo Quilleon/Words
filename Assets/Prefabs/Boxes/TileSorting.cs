@@ -5,11 +5,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[Serializable]
+public class WordHints
+{
+    public string[] hints;
+}
+
 public class TileSorting : MonoBehaviour // TileMaster???
 {
     //private GameObject[] _tempArray;
-    [SerializeField] private string[] horizontalWordHints;
-    [SerializeField] private string[] verticalWordHints;
+    //[SerializeField] private string[] horizontalWordHints;
+    [SerializeField] public WordHints[] horizontalWordHintArray;
+    //[SerializeField] private string[] verticalWordHints;
+    [SerializeField] private WordHints[] verticalWordHintArray;
     private string activeWordHint;
     private TMP_Text _wordHintDisplay;
 
@@ -245,11 +253,11 @@ public class TileSorting : MonoBehaviour // TileMaster???
 
         if (horizontal && _horizontalWords[yValueReversed] != 0)
         {
-            activeWordHint = horizontalWordHints[WhichHint()];
+            activeWordHint = horizontalWordHintArray[0].hints[WhichHint()];
         }
         else if (!horizontal && _verticalWords[selectedXValue] != 0)
         {
-            activeWordHint = verticalWordHints[WhichHint()];
+            activeWordHint = verticalWordHintArray[0].hints[WhichHint()];
         }
         else
         {

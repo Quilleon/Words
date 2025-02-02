@@ -2643,6 +2643,94 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2108412271}
     m_Modifications:
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[1].hints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.data[0]
+      value: Something to avoid in 3D modelling
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.data[1]
+      value: Entranced in an exaggerated feeling of enthusiasm or insanity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.data[2]
+      value: 4 limbed mammal who perspirates
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.data[3]
+      value: All senses heightened
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nverticalWordHints.Array.data[0].hints.Array.data[4]
+      value: A piece of iron crossing the hole in the upper millstone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.data[0]
+      value: Something you can do with a blowtorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.data[1]
+      value: To the fullest degree (used for emphasis)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.data[2]
+      value: Traditional japanese food
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.data[3]
+      value: Together with 1 horizontal makes a pokemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: NhorizontalWordHints.Array.data[0].hints.Array.data[4]
+      value: Gave, but with distance
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.data[0]
+      value: Something you can do with a blowtorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.data[1]
+      value: To the fullest degree (used for emphasis)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.data[2]
+      value: Traditional japanese food
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.data[3]
+      value: Together with 1 horizontal makes a pokemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105666752851177381, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
+      propertyPath: nhorizontalWordHints.Array.data[0].hints.Array.data[4]
+      value: Gave, but with distance
+      objectReference: {fileID: 0}
     - target: {fileID: 2309149364657937509, guid: c22878d8c369bc849a8273326ef52a85, type: 3}
       propertyPath: m_Name
       value: Mini_1
@@ -5998,16 +6086,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalWordHints:
   - 
-  - What the K in CMYK stand for
-  - A place where you can find urns (easy)
-  - 'Video game character in a forest '
-  - ___ball, used to catch bug and water type pokemon
-  - Barack o___
-  - 5
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  horizontalWordHintArray: []
   verticalWordHints:
   - 
   - Internett adress
   - Half the word of a norwegian videogame company
+  verticalWordHintArray: []
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}
