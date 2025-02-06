@@ -6084,19 +6084,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalWordHints:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  wordHintList: 0
   horizontalWordHintArray: []
-  verticalWordHints:
-  - 
-  - Internett adress
-  - Half the word of a norwegian videogame company
   verticalWordHintArray: []
   selected: {fileID: 0}
   prevSelected: {fileID: 0}

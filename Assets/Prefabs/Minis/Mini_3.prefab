@@ -157,13 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalWordHints:
-  - What the K in CMYK stand for
-  - A place where you can find urns (easy)
-  - 'Video game character in a forest '
-  - ___ball, used to catch bug and water type pokemon
-  - Barack o___
-  - One of the singers in the KPOP band ITZY
+  wordHintList: 1
   horizontalWordHintArray:
   - hints:
     - What the K in CMYK stand for
@@ -173,24 +167,31 @@ MonoBehaviour:
     - Barack o___
     - One of the singers in the K-POP band ITZY
   - hints:
+    - What the K in CMYK stand for
+    - A place where you can find urns
+    - 'Video game character in a forest '
+    - ___ball, used to catch bug and water type pokemon
+    - A mammal tamed by the Incas for their produce and versitality
+    - One of the singers in the K-POP band ITZY
+  - hints:
     - 
     - 
     - A Yoruban metaphysical consept, meaning "head"
     - Something used for catching insects
     - A mammal tamed by the Incas for their produce and versitality
     - 
-  verticalWordHints:
-  - Internett adress
-  - Half the word of a norwegian videogame company
-  - A pro french rocket league player
-  - One of Christophers usual replies
-  - A pokemon based on a winged insect
-  - The protagonist of CrossCode
   verticalWordHintArray:
   - hints:
     - Internett adress
     - Half the word of a norwegian videogame company
     - A pro french rocket league player
+    - One of Christophers usual replies
+    - A pokemon based on a winged insect
+    - The protagonist of CrossCode
+  - hints:
+    - Internett adress
+    - Half the word of a norwegian videogame company
+    - A state of tranquility
     - One of Christophers usual replies
     - A pokemon based on a winged insect
     - The protagonist of CrossCode
