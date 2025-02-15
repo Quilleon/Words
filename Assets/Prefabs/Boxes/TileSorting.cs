@@ -16,7 +16,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
 {
     //private GameObject[] _tempArray;
     //[SerializeField] private string[] horizontalWordHints;
-    [SerializeField] [Range(0, 1)]private int wordHintList;
+    [SerializeField] [Range(0, 1)] private static int wordHintList; // Chooses which hint list to take hints from
     [SerializeField] public WordHints[] horizontalWordHintArray;
     //[SerializeField] private string[] verticalWordHints;
     [SerializeField] private WordHints[] verticalWordHintArray;
@@ -257,10 +257,19 @@ public class TileSorting : MonoBehaviour // TileMaster???
         if (horizontal && _horizontalWords[yValueReversed] != 0)
         {
             activeWordHint = horizontalWordHintArray[wordHintList].hints[WhichHint()];
+            
+            // If hint is empty, resort to default
+            if (activeWordHint == "")
+                activeWordHint = horizontalWordHintArray[0].hints[WhichHint()];
+            
         }
         else if (!horizontal && _verticalWords[selectedXValue] != 0)
         {
             activeWordHint = verticalWordHintArray[wordHintList].hints[WhichHint()];
+            
+            // If hint is empty, resort to default
+            if (activeWordHint == "")
+                activeWordHint = verticalWordHintArray[0].hints[WhichHint()];
         }
         else
         {
@@ -651,5 +660,13 @@ public class TileSorting : MonoBehaviour // TileMaster???
         //foreach (var num in _horizontalWords) print(num);
 
         #endregion
+    }
+
+    public void ChangeHint()
+    {
+        //if (hintList is 0 or 1)
+            wordHintList = wordHintList == 0 ? 1 : 0;
+        //else
+          //  Debug.LogError("Wrong hint input");
     }
 }

@@ -157,21 +157,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordHintList: 1
+  wordHintList: 0
   horizontalWordHintArray:
   - hints:
     - What the K in CMYK stand for
-    - A place where you can find urns
+    - Combined with di- and noct- defines their active time of day
     - 'Video game character in a forest '
     - ___ball, used to catch bug and water type pokemon
     - Barack o___
-    - One of the singers in the K-POP band ITZY
-  - hints:
-    - What the K in CMYK stand for
-    - A place where you can find urns
-    - 'Video game character in a forest '
-    - ___ball, used to catch bug and water type pokemon
-    - A mammal tamed by the Incas for their produce and versitality
     - One of the singers in the K-POP band ITZY
   - hints:
     - 
@@ -179,7 +172,7 @@ MonoBehaviour:
     - A Yoruban metaphysical consept, meaning "head"
     - Something used for catching insects
     - A mammal tamed by the Incas for their produce and versitality
-    - 
+    - Israeli version of 6 down
   verticalWordHintArray:
   - hints:
     - Internett adress
@@ -189,19 +182,12 @@ MonoBehaviour:
     - A pokemon based on a winged insect
     - The protagonist of CrossCode
   - hints:
-    - Internett adress
-    - Half the word of a norwegian videogame company
-    - A state of tranquility
-    - One of Christophers usual replies
-    - A pokemon based on a winged insect
-    - The protagonist of CrossCode
-  - hints:
     - 
     - Tiny sea creatures which are essential for the biggest mammal on earth
     - A state of tranquility
     - Shortened expression of agreement
     - Darner dragonfly in japanese (also the name of a dragonfly pokemon)
-    - A common female name in Norway
+    - A way to spell a common female name in Norway
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}

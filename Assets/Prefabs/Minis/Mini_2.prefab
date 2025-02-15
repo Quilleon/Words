@@ -154,44 +154,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalWordHints:
-  - Petname for bf/gf
-  - 07734
-  - 58008
-  - Rude response to an idea
-  - One of the four things a bride needs for good luck
+  wordHintList: 0
   horizontalWordHintArray:
   - hints:
     - Petname for bf/gf
-    - 07734
-    - 58008
+    - (3717 + 150) * 2
+    - 2002 * 4 + 10^4 * 5
     - Rude response to an idea
     - One of the four things a bride needs for good luck
   - hints:
     - 
+    - 07734
+    - 58008
     - 
     - 
-    - 
-    - 
-  verticalWordHints:
-  - Newly rebranded to "Max"
-  - Bear character appearing in the Hobbit
-  - One of Alan Walkers top songs, on the album "Different World"
-  - Where the weenus is located
-  - Something that can be bought in the steam store
   verticalWordHintArray:
   - hints:
-    - Newly rebranded to "Max"
+    - Old name for a streaming service
     - Bear character appearing in the Hobbit
     - One of Alan Walkers top songs, on the album "Different World"
     - Where the weenus is located
     - Something that can be bought in the steam store
   - hints:
+    - Newly rebranded to "Max"
     - 
+    - Doing something singel-handedly
     - 
-    - 
-    - 
-    - 
+    - A way to refer to the soundtrack of a production (movie, game, e.g)
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}
