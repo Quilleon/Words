@@ -90,22 +90,29 @@ public class TileSorting : MonoBehaviour // TileMaster???
         // Select next box
         var currentBox = _crossWord[selectedXValue, selectedYValue];
         var nextBox = horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY];
+
+        //if (horizontal) selectedXValue = nextX; else selectedYValue = nextY;
+        
         
         //print(nextX + ", " + selectedYValue);
-
-        if (nextBox) // if there is a box there
+        
+        if (nextBox && nextBox.tmpInput != selected) // if there is a new box there
         {
             selected = nextBox.tmpInput;
             selected.Select();
-            
+
+            // If there is text on the box, skip over
+            if (forward && selected.text != "")
+            {
+                print("Should skip box");
+                //SelectNextBox(forward);
+            }
         }
         else // if not
         {
             //selected = currentBox;
             currentBox.tmpInput.Select();
         }
-        
-        
         
         
         //(horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY]).GetComponentInParent<LetterBoxController>().ButtonFunction();

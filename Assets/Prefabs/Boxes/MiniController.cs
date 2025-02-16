@@ -55,6 +55,11 @@ public class MiniController : MonoBehaviour
         {
             hasSpawnedCanon = true;
             Instantiate(ActiveMiniTileSorting.FilledMini(true) ? confettiCanon : flaut[Random.Range(0,3)]);
+            
+            
+            // Set phone sound
+            AndroidNativeVolumeService soundService = new AndroidNativeVolumeService();
+            soundService.SetSystemVolume(1);
         }
         else if (!ActiveMiniTileSorting.FilledMini(false))
             hasSpawnedCanon = false;
