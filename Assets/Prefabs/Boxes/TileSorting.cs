@@ -91,7 +91,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
         var currentBox = _crossWord[selectedXValue, selectedYValue];
         var nextBox = horizontal ? _crossWord[nextX, selectedYValue] : _crossWord[selectedXValue, nextY];
         
-        print(nextX + ", " + selectedYValue);
+        //print(nextX + ", " + selectedYValue);
 
         if (nextBox) // if there is a box there
         {

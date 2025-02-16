@@ -11,6 +11,8 @@ public class MiniController : MonoBehaviour
     [SerializeField] private Color32 normal, highlighted;
 
     [SerializeField] private GameObject confettiCanon;
+    [SerializeField] private GameObject[] flaut;
+    private bool hasSpawnedCanon;
     
     void Start()
     {
@@ -49,9 +51,12 @@ public class MiniController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ActiveMiniTileSorting.FilledMini(false))
+        if (!hasSpawnedCanon && ActiveMiniTileSorting.FilledMini(false))
         {
-            //ActiveMiniTileSorting.FilledMini(true) ? Instantiate(confettiCanon) : ;
+            hasSpawnedCanon = true;
+            Instantiate(ActiveMiniTileSorting.FilledMini(true) ? confettiCanon : flaut[Random.Range(0,3)]);
         }
+        else if (!ActiveMiniTileSorting.FilledMini(false))
+            hasSpawnedCanon = false;
     }
 }

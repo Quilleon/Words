@@ -121,13 +121,13 @@ public class LetterBoxController : MonoBehaviour
         
         //ChangeAppearance(0);
         
-        print("Deselected!");
+        //print("Deselected!");
         //var thisBox = GetComponentInChildren<TMP_InputField>();
         
-        if (_tileSorting.selected == tmpInput )
+        if (_tileSorting.selected == tmpInput)
         {
             //_tileSorting.selected = null;
-            print("Re-selected");
+            //print("Re-selected");
             //_tmpInput.Select();
         }
         
