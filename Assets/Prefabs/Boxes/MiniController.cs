@@ -9,6 +9,8 @@ public class MiniController : MonoBehaviour
     //private TileSorting[] allMinis;
 
     [SerializeField] private Color32 normal, highlighted;
+
+    [SerializeField] private GameObject confettiCanon;
     
     void Start()
     {
@@ -31,7 +33,6 @@ public class MiniController : MonoBehaviour
             //print(mini.name);
             mini.gameObject.SetActive(false);
         }
-            
     }
 
     public void ActivateMini(int childNum) // Is used on mini selection buttons
@@ -48,6 +49,9 @@ public class MiniController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ActiveMiniTileSorting.FilledMini(false))
+        {
+            //ActiveMiniTileSorting.FilledMini(true) ? Instantiate(confettiCanon) : ;
+        }
     }
 }

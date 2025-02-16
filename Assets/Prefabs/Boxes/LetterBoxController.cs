@@ -28,6 +28,7 @@ public class LetterBoxController : MonoBehaviour
 
     public char correctChar; //{ get; private set; }
 
+    
     #region Functions for Tile Sorting script
 
     public void AssignCorrectChar()
@@ -49,13 +50,16 @@ public class LetterBoxController : MonoBehaviour
         ChangeInputText(correctChar.ToString());
     }
     
+    public bool HasChar()
+    {
+        return !CompareInputText("");
+    }
+    
     public bool IsCorrectChar()
     {
         //return correctChar == _tmpInput.text.ToCharArray()[0];
         return CompareInputText(correctChar.ToString()); 
     }
-    
-    
 
     #endregion
     

@@ -139,6 +139,7 @@ public class TileSorting : MonoBehaviour // TileMaster???
             prevSelected.GetComponentInParent<LetterBoxController>().ChangeAppearance(0);
         }
         
+        // Should be called through checks instead of update()
         ActivateWord();
 
         
@@ -662,6 +663,22 @@ public class TileSorting : MonoBehaviour // TileMaster???
         #endregion
     }
 
+    // TODO: This should be done on every box when it is changed
+    public bool FilledMini(bool wantCorrectChar)
+    {
+        bool isMiniFilled = true;
+        
+        foreach (var box in _crossWord)
+        {
+            if (isMiniFilled && box) // If there is an item there
+            {
+                isMiniFilled = wantCorrectChar ? box.IsCorrectChar() : box.HasChar();
+            }
+        }
+
+        return isMiniFilled;
+    }
+    
     public void ChangeHint()
     {
         //if (hintList is 0 or 1)
