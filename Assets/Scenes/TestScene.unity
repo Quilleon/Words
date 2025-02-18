@@ -1016,7 +1016,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 431565466}
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c206c5fee88b8a4f9602035b12358d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phoneBuild: 0
+  phoneBuild: 1
   phoneScale: 0.91
   windowsScale: 0.25
   validate: 0
