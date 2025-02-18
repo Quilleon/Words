@@ -137,7 +137,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 952417424428254321, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHintArray.Array.data[1].hints.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: verticalWordHintArray.Array.data[1].hints.Array.data[5]
+      value: The protagonist of CrossCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHintArray.Array.data[0].hints.Array.data[4]
+      value: A mammal tamed by the Incas for their produce and versitality
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
+      propertyPath: horizontalWordHintArray.Array.data[1].hints.Array.data[4]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8263755483360739863, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_LocalPosition.x
@@ -982,6 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328355531}
+  - component: {fileID: 328355532}
   m_Layer: 0
   m_Name: Screen Scaler
   m_TagString: Untagged
@@ -999,7 +1016,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.91, y: 0.91, z: 0.91}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 431565466}
@@ -1010,6 +1027,22 @@ Transform:
   - {fileID: 1766867702}
   m_Father: {fileID: 1401304957}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &328355532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328355530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c206c5fee88b8a4f9602035b12358d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phoneBuild: 0
+  phoneScale: 0.91
+  windowsScale: 0.25
+  validate: 0
 --- !u!224 &330955590 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1301754105111942772, guid: a88f837b27fcf8a4fa8cd308d7f4a515, type: 3}

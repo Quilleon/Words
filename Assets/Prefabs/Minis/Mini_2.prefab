@@ -154,7 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordHintList: 0
   horizontalWordHintArray:
   - hints:
     - Petname for bf/gf
@@ -174,13 +173,13 @@ MonoBehaviour:
     - Bear character appearing in the Hobbit
     - One of Alan Walkers top songs, on the album "Different World"
     - Where the weenus is located
-    - Something that can be bought in the steam store
+    - A way to refer to the soundtrack of a production (movie, game, e.g)
   - hints:
     - Newly rebranded to "Max"
     - 
     - Doing something singel-handedly
     - 
-    - A way to refer to the soundtrack of a production (movie, game, e.g)
+    - Something that can be bought in the steam store
   selected: {fileID: 0}
   prevSelected: {fileID: 0}
   normal: {r: 1, g: 1, b: 1, a: 1}
