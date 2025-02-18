@@ -157,7 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordHintList: 0
   horizontalWordHintArray:
   - hints:
     - What the K in CMYK stand for
@@ -169,7 +168,7 @@ MonoBehaviour:
   - hints:
     - 
     - 
-    - A Yoruban metaphysical consept, meaning "head"
+    - ___ and the blind forest
     - Something used for catching insects
     - A mammal tamed by the Incas for their produce and versitality
     - Israeli version of 6 down

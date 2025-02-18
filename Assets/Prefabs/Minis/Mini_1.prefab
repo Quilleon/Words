@@ -156,12 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c3d988269e3e846b495e5a1ccbd50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalWordHints:
-  - Something you can do with a blowtorch
-  - To the fullest degree (used for emphasis)
-  - Traditional japanese food
-  - Together with 1 horizontal makes a pokemon
-  - Gave, but with distance
   horizontalWordHintArray:
   - hints:
     - Something you can do with a blowtorch
@@ -171,16 +165,10 @@ MonoBehaviour:
     - Gave, but with distance
   - hints:
     - 
-    - 
+    - Yours ___
     - Traditional japanese food
     - 
     - 
-  verticalWordHints:
-  - Something to avoid in 3D modelling
-  - Entranced in an exaggerated feeling of enthusiasm or insanity
-  - 4 limbed mammal who perspirates
-  - All senses heightened
-  - A piece of iron crossing the hole in the upper millstone
   verticalWordHintArray:
   - hints:
     - Something to avoid in 3D modelling
