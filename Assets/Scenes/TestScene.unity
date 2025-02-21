@@ -137,19 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 952417424428254321, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHintArray.Array.data[1].hints.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: verticalWordHintArray.Array.data[1].hints.Array.data[5]
-      value: The protagonist of CrossCode
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
-      propertyPath: horizontalWordHintArray.Array.data[0].hints.Array.data[4]
-      value: A mammal tamed by the Incas for their produce and versitality
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6553237989668855100, guid: c9473f98f045255409771c867c4f8829, type: 3}
       propertyPath: horizontalWordHintArray.Array.data[1].hints.Array.data[4]
